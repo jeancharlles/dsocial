@@ -1,0 +1,84 @@
+{% load bootstrap4 %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- CSS -->
+    {% bootstrap_css %}   
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>Django Social</title>
+
+</head>
+
+<body>
+    
+    <div class="container-fluid">
+
+        <div
+            class="fb-like"
+            data-share="true"
+            data-width="450"
+            data-show-faces="true">
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h1 class="text-white text-center">{% block title %}{% endblock %}</h1>
+            </div>
+            
+            <div class="card p-5">
+                {% block content %} {% endblock %}
+            </div>     
+           
+        </div>
+
+               
+
+    </div>
+
+    <!-- SCRIPT -->
+    {% bootstrap_javascript jquery='full' %}
+
+
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId            : '1879543838895360',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v13.0'
+          });
+        };
+      </script>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId      : '1879543838895360',
+            xfbml      : true,
+            version    : 'v13.0'
+          });
+          FB.AppEvents.logPageView();
+        };
+      
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+      </script>
+
+
+</body>
+
+</html>
