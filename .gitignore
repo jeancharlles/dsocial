@@ -3,3 +3,10 @@ venv
 db.sqlite3
 .env
 main.py
+*.pyc
+__pycache__
+*.sqlite3
+*.*~
+htmlcov
+database.txt
+dabase_postgres.txt
