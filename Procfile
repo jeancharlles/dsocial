@@ -1,0 +1,1 @@
+web: gunicorn dsocial.wsgi --log-file -
