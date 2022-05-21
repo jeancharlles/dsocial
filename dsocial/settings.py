@@ -165,3 +165,5 @@ SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [
     ('picture', 'picture'),
     ('link', 'profile_url'),
 ]
+
+SOCIAL_AUTH_JSONFIELD_ENABLED = True
